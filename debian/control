@@ -1,0 +1,51 @@
+Source: recode
+Section: text
+Priority: optional
+Maintainer: Santiago Vila <sanvila@debian.org>
+Standards-Version: 3.9.8
+Build-Depends: debhelper (>= 9), gettext, texinfo
+
+Package: recode
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Multi-Arch: foreign
+Description: Character set conversion utility
+ Free `recode' converts files between character sets and usages.  When
+ exact transliterations are not possible, it may get rid of the
+ offending characters or fall back on approximations.  This program
+ recognizes or produces nearly 300 different character sets and is able
+ to transliterate files between almost any pair.  Most RFC 1345
+ character sets, and all `libiconv' character sets, are supported.
+
+Package: recode-doc
+Section: doc
+Priority: optional
+Architecture: all
+Depends: ${misc:Depends}
+Multi-Arch: foreign
+Description: Documentation for Free recode
+ This package contains the HTML documentation for Free recode.
+
+Package: librecode0
+Section: libs
+Priority: optional
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Multi-Arch: same
+Description: Shared library on which recode is based
+ This recoding library converts files between various coded character
+ sets and surface encodings.  The library recognizes or produces more
+ than 300 different character sets and is able to convert files between
+ almost any pair.  Most RFC 1345 character sets, and all `libiconv'
+ character sets, are supported.
+
+Package: librecode-dev
+Section: libdevel
+Priority: optional
+Architecture: any
+Depends: ${shlibs:Depends}, librecode0 (= ${binary:Version}), ${misc:Depends}
+Multi-Arch: same
+Description: Development package for librecode0
+ This package contains the header files and static librecode.a
+ library needed to build applications based on librecode.

@@ -1,0 +1,262 @@
+recode (3.6-23) unstable; urgency=medium
+
+  * Set manpage date to 2001-01 for reproducible build. Closes: #820457.
+  * Do not build the program or run the tests for arch-indep builds.
+  * Add Multi-Arch stanzas to all packages. Closes: #840024.
+  * Split override_dh_installdocs into -arch and -indep.
+  * Refresh all patches and rename them to *.patch.
+  * Update config.guess and config.sub.
+
+ -- Santiago Vila <sanvila@debian.org>  Wed, 30 Nov 2016 15:35:40 +0100
+
+recode (3.6-22) unstable; urgency=medium
+
+  * Change doc/mdate-sh to use TZ=UTC.
+  * Update config.guess and config.sub.
+
+ -- Santiago Vila <sanvila@debian.org>  Wed, 26 Aug 2015 12:07:22 +0200
+
+recode (3.6-21) unstable; urgency=low
+
+  * Switch from texi2html to makeinfo.
+  * Updated config.guess and config.sub.
+
+ -- Santiago Vila <sanvila@debian.org>  Sat, 12 Oct 2013 18:00:42 +0200
+
+recode (3.6-20) unstable; urgency=low
+
+  * Set LD_LIBRARY_PATH when required, multiarch and the old libtool
+    do not work together very well.
+
+ -- Santiago Vila <sanvila@debian.org>  Wed, 06 Jun 2012 13:36:04 +0200
+
+recode (3.6-19) unstable; urgency=low
+
+  * Updated config.guess and config.sub.
+  * Updated po files from translation project.
+  * Switch to dh for multiarch and hardened build flags.
+  * Tidy up debian/patches.
+
+ -- Santiago Vila <sanvila@debian.org>  Mon, 04 Jun 2012 23:41:00 +0200
+
+recode (3.6-18) unstable; urgency=low
+
+  * Switch to 3.0 (quilt) source format.
+  * Fixed several lintian warnings.
+  * Dropped obsolete -D_REENTRANT.
+  * Added missing postrm.
+
+ -- Santiago Vila <sanvila@debian.org>  Sat, 06 Aug 2011 17:47:12 +0200
+
+recode (3.6-17) unstable; urgency=medium
+
+  * Do not ignore errors from make distclean.
+  * Changed debian/* files again for new texi2html behaviour. Closes: #552972.
+
+ -- Santiago Vila <sanvila@debian.org>  Wed, 04 Nov 2009 12:36:08 +0100
+
+recode (3.6-16) unstable; urgency=low
+
+  * Modified doc/Makefile.in to avoid /usr/share/info/dir.gz.
+  * Handle info files as indicated by policy 3.8.3.
+  * Fixed memory leak in librecode. Closes: #242190.
+    Thanks a lot to Gaël Le Mignot for the patch.
+  * Moved doc-base manual to "Text" section.
+  * Removed useless calls to install-docs.
+  * Updated config.guess and config.sub.
+  * Removed useless *.la files.
+  * Added watch file.
+
+ -- Santiago Vila <sanvila@debian.org>  Sun, 30 Aug 2009 21:15:42 +0200
+
+recode (3.6-15) unstable; urgency=low
+
+  * Reduced size of "ignore" element in struct recode_symbol to 1 bit.
+    Should make gcc-4.3 happy. Closes: #462004.
+
+ -- Santiago Vila <sanvila@debian.org>  Wed,  2 Apr 2008 10:02:30 +0200
+
+recode (3.6-14) unstable; urgency=low
+
+  * Should build twice in a row. Closes: #424291.
+  * Updated po files from translation project. Closes: #313925, #427366.
+
+ -- Santiago Vila <sanvila@debian.org>  Thu, 28 Jun 2007 21:25:18 +0200
+
+recode (3.6-13) unstable; urgency=medium
+
+  * Updated config.guess and config.sub.
+  * Fixed NAME section in manpage (Closes: #368634).
+  * Removed build-dependency on flex (Closes: #402023).
+
+ -- Santiago Vila <sanvila@debian.org>  Fri,  8 Dec 2006 13:07:44 +0100
+
+recode (3.6-12) unstable; urgency=low
+
+  * Updated config.guess and config.sub for GNU/kFreeBSD (Closes: #333452).
+
+ -- Santiago Vila <sanvila@debian.org>  Wed, 12 Oct 2005 17:12:34 +0200
+
+recode (3.6-11) unstable; urgency=low
+
+  * Fixed FTBFS bug caused by new texi2html behaviour (Closes: #318557).
+  * Updated URL for original source in copyright file.
+  * Changed doc-base and copyright files to UTF-8.
+
+ -- Santiago Vila <sanvila@debian.org>  Sat, 16 Jul 2005 18:40:54 +0200
+
+recode (3.6-10) unstable; urgency=low
+
+  * Removed executable bit from librecode.la to make lintian happy.
+  * Added -D_REENTRANT to CFLAGS, since there are libraries here.
+  * Rewritten debian/rules to allow parallel make.
+
+ -- Santiago Vila <sanvila@debian.org>  Thu,  9 Oct 2003 13:18:56 +0200
+
+recode (3.6-9) unstable; urgency=low
+
+  * ./configure --without-included-gettext. Messages should now be shown
+    in UTF-8 if that's the charset for the selected locale (Closes: #207736).
+  * Updated a lot of translations from the Free Translation Project
+    (those having all the messages translated).
+  * Added gettext to Build-Depends: accordingly.
+
+ -- Santiago Vila <sanvila@debian.org>  Fri, 29 Aug 2003 19:22:24 +0200
+
+recode (3.6-8) unstable; urgency=low
+
+  * Updated libtool stuff (Closes: #201945). Note: The size of the diff
+    is not an error, it's mainly the result of running libtoolize, updating
+    m4/libtool.m4 and acinclude.m4, running aclocal, and running autoconf.
+  * Removed file from Build-Depends, the new libtool should not require it.
+  * Updated/improved description for recode and librecode0 (Closes: #206875).
+  * Moved librecode-dev to Section: libdevel.
+
+ -- Santiago Vila <sanvila@debian.org>  Thu, 28 Aug 2003 17:05:04 +0200
+
+recode (3.6-7) unstable; urgency=medium
+
+  * Fixed wrong pointer re-calculation in guarantee_nul_terminator().
+    Thanks a lot to Enrik Berkhan (Closes: #156635).
+  * Standards-Version: 3.5.7.
+
+ -- Santiago Vila <sanvila@debian.org>  Sun, 20 Oct 2002 21:23:02 +0200
+
+recode (3.6-6) unstable; urgency=medium
+
+  * Modified hash.h so that functions hash_lookup, hash_delete, hash_free and
+    hash_insert are prefixed by `recode_' to prevent collisions with php4.
+    Thanks a lot to Steve Langasek and Bruno Haible. Closes: #131080.
+
+ -- Santiago Vila <sanvila@debian.org>  Fri,  8 Mar 2002 18:44:36 +0100
+
+recode (3.6-5) unstable; urgency=low
+
+  * Fixed a librecode bug in recode_perform_task (Closes: #134899).
+    Thanks to Frederic Gobry and Enrik Berkhan.
+
+ -- Santiago Vila <sanvila@debian.org>  Thu, 21 Feb 2002 17:37:56 +0100
+
+recode (3.6-4) unstable; urgency=low
+
+  * Removed README from the doc directory, since it contains only
+    installation information (Closes: #123000).
+  * Added support for DEB_BUILD_OPTIONS.
+
+ -- Santiago Vila <sanvila@debian.org>  Sun,  9 Dec 2001 13:04:18 +0100
+
+recode (3.6-3) unstable; urgency=high
+
+  * UTF-8 should now work. Patch by Bruno Haible.
+    Closes: #94966, #113742, #114850.
+
+ -- Santiago Vila <sanvila@debian.org>  Sat, 20 Oct 2001 20:01:38 +0200
+
+recode (3.6-2) unstable; urgency=low
+
+  * Updated config.sub/config.guess for parisc (Closes: #95974).
+  * Made debian/rules to preserve LD_LIBRARY_PATH to allow the build
+    by using fakeroot (Closes: #102358).
+  * Registered HTML docs using doc-base.
+
+ -- Santiago Vila <sanvila@debian.org>  Sun,  1 Jul 2001 13:14:16 +0200
+
+recode (3.6-1) unstable; urgency=low
+
+  * New upstream release.
+  * Updated copyright and control files.
+  * Use >= for the shlibs file, just in case.
+  * Build-Depends-Indep: texi2html, not tetex-bin.
+  * Removed .comment and .note sections from shared library.
+
+ -- Santiago Vila <sanvila@debian.org>  Sat, 10 Mar 2001 15:03:36 +0100
+
+recode (3.5-3) unstable; urgency=medium
+
+  * Fixed typo in Build-Depends field (Closes: #81211).
+
+ -- Santiago Vila <sanvila@debian.org>  Thu,  4 Jan 2001 16:18:43 +0100
+
+recode (3.5-2) unstable; urgency=low
+
+  * Standards-Version: 3.1.1.
+  * Moved librecode0 to libs section.
+  * Moved librecode-dev to devel section.
+  * Build-Depends: flex, file. Build-Depends-Indep: tetex-bin.
+
+ -- Santiago Vila <sanvila@debian.org>  Sat, 30 Dec 2000 19:00:14 +0100
+
+recode (3.5-1) unstable; urgency=low
+
+  * New upstream release.
+  * recode(1) is no longer "undocumented".
+  * Created two new packages: librecode0 and librecode-dev.
+
+ -- Santiago Vila <sanvila@ctv.es>  Fri, 18 Jun 1999 10:44:55 +0200
+
+recode (3.4.1-11) unstable; urgency=low
+
+  * Added HTML docs, in a separate package.
+
+ -- Santiago Vila <sanvila@ctv.es>  Tue, 13 Oct 1998 21:22:43 +0200
+
+recode (3.4.1-10) unstable; urgency=low
+
+  * More detailed copyright file.
+  * Removed debstd dependency.
+  * First libc6 release.
+  * Pristine source.
+
+ -- Santiago Vila <sanvila@ctv.es>  Sun,  9 Nov 1997 18:36:26 +0100
+
+recode (3.4.1-9) unstable; urgency=low
+
+  * Some minor debian/rules changes.
+  * Added MD5 sums.
+
+ -- Santiago Vila <sanvila@ctv.es>  Sun, 23 Feb 1997 17:35:41 +0100
+
+recode (3.4.1-8) unstable; urgency=low
+
+  * Converted to standards 2.1.2.2.
+  * New maintainer.
+
+ -- Santiago Vila <sanvila@ctv.es>  Wed, 29 Jan 1997 00:30:45 +0100
+
+recode (3.4.1-3);
+
+  * Incremented version number (upload to ftp.debian.org crashed).
+
+ -- Klee Dienes <klee@mit.edu>  Sat Jan 27 14:58:57 MST 1996
+
+recode (3.4.1-2);
+
+  * Changed to add entry for recode into info directory.
+
+ -- Klee Dienes <klee@mit.edu>  Sat Jan 27 14:42:54 MST 1996
+
+recode (3.4.1-1);
+
+  * Initial Release.
+
+ -- Klee Dienes <klee@mit.edu>  Thu Jan 25 10:07:24 MST 1996

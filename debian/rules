@@ -1,0 +1,52 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+package = recode
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -f i18n/*.mo
+	rm -f doc/*.html
+	rm -f src/recode.1
+	rm -f stamp-pot
+	rm -rf doc/$(package)
+
+override_dh_auto_configure:
+	touch aclocal.m4
+	touch configure
+	touch stamp-h.in
+	touch config.h.in
+	touch Makefile.in
+	touch m4/Makefile.in
+	touch doc/Makefile.in
+	touch lib/Makefile.in
+	touch libiconv/Makefile.in
+	touch i18n/Makefile.in
+	touch src/Makefile.in
+	touch tests/Makefile.in
+	touch contrib/Makefile.in
+	dh_auto_configure -- --without-included-gettext
+	sh debian/fix-libtool
+
+override_dh_auto_build-arch:
+	LD_LIBRARY_PATH=`pwd`/src/.libs dh_auto_build
+
+override_dh_auto_build-indep:
+
+override_dh_auto_test-arch:
+	LD_LIBRARY_PATH=`pwd`/src/.libs dh_auto_test
+
+override_dh_auto_test-indep:
+
+override_dh_auto_install-indep:
+
+override_dh_installdocs-arch:
+	install -d debian/lib$(package)-dev/usr/share/doc
+	ln -s lib$(package)0 debian/lib$(package)-dev/usr/share/doc/lib$(package)-dev
+	dh_installdocs -a TODO NEWS THANKS doc/File-Latin1
+
+override_dh_installdocs-indep:
+	cd doc && makeinfo --html --split=chapter $(package).texi
+	dh_installdocs -i doc/$(package)/*.html

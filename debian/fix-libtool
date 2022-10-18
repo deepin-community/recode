@@ -1,0 +1,5 @@
+#!/bin/sh
+echo Fixing libtool for -rpath problems.
+sed -e 's/^hardcode_libdir_flag_spec=.*/hardcode_libdir_flag_spec=" "/' libtool > libtool.new
+mv libtool.new libtool
+chmod 755 libtool

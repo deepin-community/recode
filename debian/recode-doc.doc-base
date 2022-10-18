@@ -1,0 +1,16 @@
+Document: recode-doc
+Title: Free recode manual
+Author: François Pinard
+Abstract: This manual documents Free recode.
+ This recoding library converts files between various coded character
+ sets and surface encodings.  When this cannot be achieved exactly, it
+ may get rid of the offending characters or fall back on approximations.
+ The library recognises or produces nearly 150 different character sets
+ and is able to convert files between almost any pair.  Most RFC 1345
+ character sets are supported.  The `recode' program is a handy
+ front-end to the library.
+Section: Text
+
+Format: HTML
+Index: /usr/share/doc/recode-doc/index.html
+Files: /usr/share/doc/recode-doc/*.html

@@ -1,0 +1,15 @@
+01-no-usr-share-info-dir-gz.patch
+02-src-libiconv-c-utf8.patch
+03-src-task-c-librecode.patch
+04-src-hash-h-php4-collision.patch
+05-src-request-c-pointer-recalculation.patch
+06-libtool-update.patch
+07-po-update.patch
+08-all-linguas-update.patch
+09-manpage-name-section.patch
+10-src-recodext-h-gcc-fix.patch
+11-src-names-c-memory-leak.patch
+12-src-names-c-format-string.patch
+13-mdate-sh-use-tz-utc.patch
+14-set-manpage-date-to-upstream-release-date.patch
+99-config-guess-config-sub.patch
