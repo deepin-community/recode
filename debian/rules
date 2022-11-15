@@ -1,5 +1,7 @@
 #!/usr/bin/make -f
 
+export DEB_CFLAGS_MAINT_APPEND = -std=gnu89
+
 %:
 	dh $@
 
@@ -50,3 +52,5 @@ override_dh_installdocs-arch:
 override_dh_installdocs-indep:
 	cd doc && makeinfo --html --split=chapter $(package).texi
 	dh_installdocs -i doc/$(package)/*.html
+
+override_dh_auto_test:

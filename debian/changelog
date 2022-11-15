@@ -1,3 +1,16 @@
+recode (3.6.1-deepin1) unstable; urgency=medium
+
+  * Use python2 as Build-Depend
+  * Use -std=gnu89 to CFLAGS to restore pre-GCC5 semantics
+
+ -- Han Gao <gaohan@iscas.ac.cn>  Wed, 16 Nov 2022 05:11:45 +0800
+
+recode (3.6-24) unstable; urgency=medium
+
+  * Add documentencoding to texi file to fix a FTBFS problem.
+
+ -- Santiago Vila <sanvila@debian.org>  Sun, 03 Nov 2019 12:34:42 +0100
+
 recode (3.6-23) unstable; urgency=medium
 
   * Set manpage date to 2001-01 for reproducible build. Closes: #820457.
