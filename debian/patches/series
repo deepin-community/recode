@@ -13,6 +13,3 @@
 13-mdate-sh-use-tz-utc.patch
 14-set-manpage-date-to-upstream-release-date.patch
 15-documentencoding.patch
-99-config-guess-config-sub.patch
-uniontech001_add_header_files.patch
-use-python2.patch
