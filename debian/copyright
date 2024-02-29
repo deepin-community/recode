@@ -7,7 +7,7 @@ This package was first put together by Klee Dienes <klee@mit.edu>.
 It is currently maintained by Santiago Vila <sanvila@debian.org>,
 from sources obtained from:
 
-http://ftp.gnu.org/gnu/recode/recode-3.6.tar.gz
+https://ftp.gnu.org/old-gnu/recode/recode-3.6.tar.gz
 
 The changes were fairly minimal, and consisted solely of adding
 various debian/* files to the distribution.

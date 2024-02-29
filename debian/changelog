@@ -1,9 +1,20 @@
-recode (3.6.1-deepin1) unstable; urgency=medium
+recode (3.6-25) unstable; urgency=medium
 
-  * Use python2 as Build-Depend
-  * Use -std=gnu89 to CFLAGS to restore pre-GCC5 semantics
+  * Call makeinfo using --output option. This allows the package to be
+    built with Texinfo 7. Thanks to Hilmar Preusse. Closes: #1030373.
+  * Drop 99-config-guess-config-sub.patch, as debhelper already cares.
+  * Raise debhelper compat level to 10. Above that level there is
+    a little incompatibility with current configure script that
+    will be solved in recode 3.7.x.
+  * Remove priority field for all binary packages in debian/control,
+    as all of them are optional and this is already in the source.
+  * Remove debian/watch. We are switching upstream after bookworm.
+  * Update URL in copyright file.
+  * Standards-Version: 4.6.2.
+  * Rules-Requires-Root: no.
+  * Run wrap-and-sort.
 
- -- Han Gao <gaohan@iscas.ac.cn>  Wed, 16 Nov 2022 05:11:45 +0800
+ -- Santiago Vila <sanvila@debian.org>  Sat, 11 Feb 2023 17:15:00 +0100
 
 recode (3.6-24) unstable; urgency=medium
 
